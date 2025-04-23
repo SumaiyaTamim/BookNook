@@ -4,7 +4,7 @@ function Cards({ item }) {
   return (
     <>
       <div className="flex flex-wrap gap-4 justify-center"> 
-        <div className="card bg-base-100 w-80 h-96 shadow-md m-2 mt-4  my-3 p-3"> 
+        <div className="card bg-base-100 w-80 h-96 shadow-md m-2 mt-4  my-3 p-3 hover:scale-105 duration-200"> 
           <figure className="h-48"> {/*fixed height for the figure */}
             <img
               src={item.image}
@@ -20,7 +20,7 @@ function Cards({ item }) {
             <p>{item.description}</p>
             <div className="card-actions justify-between cursor-pointer">
               <div className="badge badge-outline rounded-full border-[1px]">${item.price}</div>
-              <div className="badge badge-outline hover:bg-pink-500 hover:text-white duration-200 rounded-full border-[1px]">Buy now</div>
+              <div className="badge badge-outline hover:bg-pink-500 hover:text-white duration-200 rounded-full border-[1px]">Read now</div>
             </div>
           </div>
         </div>
