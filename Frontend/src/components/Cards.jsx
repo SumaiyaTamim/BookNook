@@ -4,7 +4,8 @@ function Cards({ item }) {
   return (
     <>
       <div className="flex flex-wrap gap-4 justify-center"> 
-        <div className="card bg-base-100 w-80 h-96 shadow-md m-2 mt-4  my-3 p-3 hover:scale-105 duration-200"> 
+        <div className="card bg-base-100 w-80 h-96 shadow-md m-2 mt-4  my-3 p-3 hover:scale-105 duration-200
+        dark:bg-slate-900 dark:text-white dark:border"> 
           <figure className="h-48"> {/*fixed height for the figure */}
             <img
               src={item.image}
