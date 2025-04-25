@@ -1,31 +1,33 @@
-import express from "express"
-import mongoose from "mongoose"
-import dotenv from "dotenv"
-// const express = require('express')
-// const dotenv = require('dotenv')
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import cors from "cors";
+import bookRoute from "./route/book.route.js";
 
-const app = express()
+const app = express();
 dotenv.config();
 
-const PORT = process.env.PORT || 4000
+// Middleware setup (must come before routes)
+app.use(cors()); 
+app.use(express.json()); 
+
+const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI;
 
-// connect to mongoDB
+// MongoDB connection
 try {
-    mongoose.connect(URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-    console.log("Connected to mongoDB");
+  mongoose.connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  console.log("Connected to MongoDB");
 } catch (error) {
-    console.log("Error: ", error);
+  console.log("Error: ", error);
 }
 
+// Routes (after middleware)
+app.use("/book", bookRoute);
 
-app.get('/', (req, res) => {
-  res.send('Hello YOU!')
-})
-
-app.listen(PORT, () => { 
-  console.log(`Server is  listening on port ${PORT}`)
-})
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
