@@ -4,6 +4,7 @@ import Home from './home/Home.jsx'
 import Courses from "./courses/Courses";
 import {} from 'react-router-dom';
 import Signup from './components/Signup.jsx';
+import {Toaster} from 'react-hot-toast';
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
     <Route path="/course" element={<Courses/>}/>
     <Route path="/signup" element={<Signup/>}/>
    </Routes>
-     
+     <Toaster/>
     </div>
     </>
   )
