@@ -136,13 +136,10 @@ function Signup() {
             </button> 
             <p className="flex items-center gap-1">
               Already registered? 
-              <button 
-                type="button"
-                className="underline text-blue-500 cursor-pointer ml-1"
-                onClick={() => document.getElementById("my_modal_3").showModal()}>
+              <Link to="/"
+                className="underline text-blue-500 cursor-pointer ml-1">
                 Login
-              </button>
-              <Login/>
+              </Link>
             </p>
           </div>
         </form>
